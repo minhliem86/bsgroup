@@ -28,7 +28,7 @@
             <tr>
               <th width="20%">ID</th>
               <th width="20%">Photos</th>
-              <th width="20%">Order <button class="btn btn-primary btn-xs">Update Order</button></th>
+              <th width="20%">Order <button class="btn btn-primary btn-xs" id="btn-updateOrder">Update Order</button></th>
               <th width="20%">Status</th>
               <th>&nbsp;</th>
             </tr>
@@ -114,6 +114,14 @@
             }
           })
         })
+
+        // UPDATE ORDER
+        $(document).on('click', '#btn-updateOrder', function(){
+
+          $('input[name="dataOrder"]').each(function(e){
+
+          })
+        });;
 
       })
 

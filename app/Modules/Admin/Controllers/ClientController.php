@@ -142,7 +142,7 @@ class ClientController extends Controller
         if(!$request->ajax()){
             abort(404, 'Not Access');
         }else{
-
+          
         }
     }
 
