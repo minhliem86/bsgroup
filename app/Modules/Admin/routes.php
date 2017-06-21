@@ -16,6 +16,9 @@ Route::group(['prefix' => 'admin', 'namespace' => 'App\Modules\Admin\Controllers
     Route::post('password/email', 'Auth\PasswordController@sendResetLinkEmail');
     Route::post('password/reset', 'Auth\PasswordController@reset');
 
+    // Change Password
+    Route::post('/changePass', ['as' => 'admin.changePass.postChangePass', 'uses'=>'ProfileController@postChangePass']);
+
     /*ROLE, PERMISSION*/
     Route::get('/create-role', ['as' => 'admin.createRole', 'uses' => 'Auth\RoleController@createRole']);
     Route::post('/create-role', ['as' => 'admin.postCreateRole', 'uses' => 'Auth\RoleController@postCreateRole']);
@@ -26,6 +29,10 @@ Route::group(['prefix' => 'admin', 'namespace' => 'App\Modules\Admin\Controllers
       Route::get('/dashboard', function(){
         return view('Admin::pages.index');
       });
+
+        //   PORFILE
+        Route::get('/profile', ['as' => 'admin.profile.index', 'uses' => 'ProfileController@index']);
+
         //   PROJECT
         Route::post('/project/deleteAll', ['as' => 'admin.project.deleteAll', 'uses' => 'ProjectController@deleteAll'  ]);
         Route::resource('/project', 'ProjectController');
@@ -39,6 +46,8 @@ Route::group(['prefix' => 'admin', 'namespace' => 'App\Modules\Admin\Controllers
         Route::post('/client/updateOrder', ['as'=>'admin.client.updateOrder', 'uses' => 'ClientController@updateOrder']);
         Route::post('/client/updateStatus', ['as'=>'admin.client.updateStatus', 'uses' => 'ClientController@updateStatus']);
         Route::resource('/client', 'ClientController');
+
+
 
         // MULTI PHOTOs
         // Route::get('photo', ['as'=>'admin.photo.index', 'uses'=>'MultiPhotoController@getIndex']);

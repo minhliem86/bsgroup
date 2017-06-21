@@ -15,6 +15,7 @@ class ComposerStaticInitfe30c194e7cb0e019de69d9bf8c6aea0
         'a0edc8309cc5e1d60e3047b5df6b7052' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/functions_include.php',
         'e7223560d890eab89cda23685e711e2c' => __DIR__ . '/..' . '/psy/psysh/src/Psy/functions.php',
         '5255c38a0faeba867671b61dfda6d864' => __DIR__ . '/..' . '/paragonie/random_compat/lib/random.php',
+        'cf150f72bd303a2ff07711c9a70f2d53' => __DIR__ . '/..' . '/google/apiclient/src/Google/autoload.php',
         'f0906e6318348a765ffb6eb24e0d0938' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/helpers.php',
         '58571171fd5812e6e447dce228f52f4d' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/helpers.php',
         'f18cc91337d49233e5754e93f3ed9ec3' => __DIR__ . '/..' . '/laravelcollective/html/src/helpers.php',
@@ -60,6 +61,7 @@ class ComposerStaticInitfe30c194e7cb0e019de69d9bf8c6aea0
             'Symfony\\Component\\CssSelector\\' => 30,
             'Symfony\\Component\\Console\\' => 26,
             'SuperClosure\\' => 13,
+            'Spatie\\LaravelAnalytics\\' => 24,
             'ShiftOneLabs\\LaravelCascadeDeletes\\' => 35,
         ),
         'P' => 
@@ -199,6 +201,10 @@ class ComposerStaticInitfe30c194e7cb0e019de69d9bf8c6aea0
         'SuperClosure\\' => 
         array (
             0 => __DIR__ . '/..' . '/jeremeamia/SuperClosure/src',
+        ),
+        'Spatie\\LaravelAnalytics\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/spatie/laravel-analytics/src',
         ),
         'ShiftOneLabs\\LaravelCascadeDeletes\\' => 
         array (

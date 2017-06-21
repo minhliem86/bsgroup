@@ -28,6 +28,7 @@ return array(
     'Symfony\\Component\\CssSelector\\' => array($vendorDir . '/symfony/css-selector'),
     'Symfony\\Component\\Console\\' => array($vendorDir . '/symfony/console'),
     'SuperClosure\\' => array($vendorDir . '/jeremeamia/SuperClosure/src'),
+    'Spatie\\LaravelAnalytics\\' => array($vendorDir . '/spatie/laravel-analytics/src'),
     'ShiftOneLabs\\LaravelCascadeDeletes\\' => array($vendorDir . '/shiftonelabs/laravel-cascade-deletes/src'),
     'Psy\\' => array($vendorDir . '/psy/psysh/src/Psy'),
     'Psr\\Log\\' => array($vendorDir . '/psr/log/Psr/Log'),
