@@ -28,7 +28,7 @@
             <tr>
               <th width="20%">ID</th>
               <th width="20%">Photos</th>
-              <th width="20%">Order <button class="btn btn-primary btn-xs">Update Order</button></th>
+              <th width="20%">Order <button class="btn btn-primary btn-xs" id="btn-UpdateOrder">Update Order</button></th>
               <th width="20%">Status</th>
               <th>&nbsp;</th>
             </tr>
@@ -38,10 +38,10 @@
             <tr>
               <td>{{$item->id}}</td>
               <td><img src="{{asset('public/upload').'/'.$item->img_url }}" width="100" alt=""></td>
-              <td ><input type="text" name="dataOrder[{{$item->id}}]" value="{{$item->order}}" class="form-control" /></td>
+              <td ><input type="text" name="dataOrder" data-id="{{$item->id}}" value="{{$item->order}}" class="form-control" /></td>
               <td>
                   <label class="toggle">
-                    <input type="checkbox" name="status" value="1" {{$item->status == 1 ? 'checked' : '' }}  >
+                    <input type="checkbox" name="status" value="1" data-id="{{$item->id}}" {{$item->status == 1 ? 'checked' : '' }}  >
                     <span class="handle"></span>
                   </label>
               </td>
@@ -113,6 +113,47 @@
               });
             }
           })
+        })
+
+        // UPDATE ORDER
+        $(document).on('click', '#btn-UpdateOrder', function(){
+            const data_order = {};
+            $('input[name="dataOrder"]').each(function(i){
+                const id = $(this).data('id');
+                const value = $(this).val();
+                data_order[id] = value;
+            });
+            $.ajax({
+                url: "{{route('admin.client.updateOrder')}}",
+                type: "POST",
+                data: {data: data_order, _token:$('meta[name="csrf-token"]').attr('content') },
+                success: function(rs){
+                    if(!rs.error){
+                        location.reload();
+                    }
+                }
+            })
+        });
+
+        // UPDATE STATUS
+        $(document).on('change', 'input[name="status"]', function(){
+            let value = 0;
+            if($(this).is(':checked')){
+                value = 1;
+            }
+            // console.log(value);
+            const id = $(this).data('id');
+            $.ajax({
+                url: "{{route('admin.client.updateStatus')}}",
+                type: "POST",
+                data: {value: value, id: id, _token:$('meta[name="csrf-token"]').attr('content')},
+                success: function(rs){
+                    if(!rs.error){
+                        alertify.success('Status Changed.')
+                    }
+                }
+            })
+
         })
 
       })

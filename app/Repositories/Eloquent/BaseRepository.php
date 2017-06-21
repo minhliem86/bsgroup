@@ -154,7 +154,7 @@ public function getOrder()
 {
   try {
     $inst = $this->model->orderBy('id','DESC')->firstOrFail();
-    return $inst->order;
+    return $inst->order + 1;
   } catch (ModelNotFoundException $e) {
     return 1;
   }

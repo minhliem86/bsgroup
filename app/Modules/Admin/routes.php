@@ -36,6 +36,8 @@ Route::group(['prefix' => 'admin', 'namespace' => 'App\Modules\Admin\Controllers
 
         // CLIENT
         Route::post('/client/deleteAll', ['as'=>'admin.client.deleteAll', 'uses' => 'ClientController@deleteAll']);
+        Route::post('/client/updateOrder', ['as'=>'admin.client.updateOrder', 'uses' => 'ClientController@updateOrder']);
+        Route::post('/client/updateStatus', ['as'=>'admin.client.updateStatus', 'uses' => 'ClientController@updateStatus']);
         Route::resource('/client', 'ClientController');
 
         // MULTI PHOTOs

@@ -142,7 +142,17 @@ class ClientController extends Controller
         if(!$request->ajax()){
             abort(404, 'Not Access');
         }else{
-
+            $data = $request->input('data');
+            foreach($data as $k => $v){
+                $att = [
+                    'order' => $v,
+                ];
+                $this->clientRepo->update($att, $k);
+            }
+            return response()->json([
+                'mes' => 'Updated',
+                'error'=> false,
+            ], 200);
         }
     }
 
@@ -152,7 +162,15 @@ class ClientController extends Controller
         if(!$request->ajax()){
             abort(404, 'Not Access');
         }else{
-
+            $value = $request->input('value');
+            $id = $request->input('id');
+            $client = $this->clientRepo->find($id);
+            $client->status = $value;
+            $client->save();
+            return response()->json([
+                'mes' => 'Updated',
+                'error'=> false,
+            ], 200);
         }
     }
 }
