@@ -142,9 +142,6 @@ class ClientController extends Controller
         if(!$request->ajax()){
             abort(404, 'Not Access');
         }else{
-<<<<<<< HEAD
-          
-=======
             $data = $request->input('data');
             foreach($data as $k => $v){
                 $att = [
@@ -156,7 +153,6 @@ class ClientController extends Controller
                 'mes' => 'Updated',
                 'error'=> false,
             ], 200);
->>>>>>> 86f1fcd68ad3fce60e510094ecbe44e1452d79c7
         }
     }
 

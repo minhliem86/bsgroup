@@ -47,6 +47,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'App\Modules\Admin\Controllers
         Route::post('/client/updateStatus', ['as'=>'admin.client.updateStatus', 'uses' => 'ClientController@updateStatus']);
         Route::resource('/client', 'ClientController');
 
+        
 
 
         // MULTI PHOTOs
