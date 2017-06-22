@@ -26,6 +26,10 @@ class ComposerStaticInitfe30c194e7cb0e019de69d9bf8c6aea0
         array (
             'phpDocumentor\\Reflection\\' => 25,
         ),
+        'd' => 
+        array (
+            'developeruz\\Analytics\\' => 22,
+        ),
         'Z' => 
         array (
             'Zizaco\\Entrust\\' => 15,
@@ -61,7 +65,6 @@ class ComposerStaticInitfe30c194e7cb0e019de69d9bf8c6aea0
             'Symfony\\Component\\CssSelector\\' => 30,
             'Symfony\\Component\\Console\\' => 26,
             'SuperClosure\\' => 13,
-            'Spatie\\LaravelAnalytics\\' => 24,
             'ShiftOneLabs\\LaravelCascadeDeletes\\' => 35,
         ),
         'P' => 
@@ -117,6 +120,10 @@ class ComposerStaticInitfe30c194e7cb0e019de69d9bf8c6aea0
             0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
             1 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
             2 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
+        ),
+        'developeruz\\Analytics\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/developeruz/laravel-analytics/src',
         ),
         'Zizaco\\Entrust\\' => 
         array (
@@ -201,10 +208,6 @@ class ComposerStaticInitfe30c194e7cb0e019de69d9bf8c6aea0
         'SuperClosure\\' => 
         array (
             0 => __DIR__ . '/..' . '/jeremeamia/SuperClosure/src',
-        ),
-        'Spatie\\LaravelAnalytics\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/spatie/laravel-analytics/src',
         ),
         'ShiftOneLabs\\LaravelCascadeDeletes\\' => 
         array (
