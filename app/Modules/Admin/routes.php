@@ -26,9 +26,8 @@ Route::group(['prefix' => 'admin', 'namespace' => 'App\Modules\Admin\Controllers
     Route::post('/ajax-permission', ['as' => 'admin.ajaxCreatePermission', 'uses' => 'Auth\RoleController@postAjaxPermission']);
 
     Route::group(['middleware' => ['can_login']], function(){
-      Route::get('/dashboard', function(){
-        return view('Admin::pages.index');
-      });
+        // DASHBOARD
+        Route::get('/dashboard', ['as' => 'admin.getIndex', 'uses' => 'DashboardController@index']);
 
         //   PORFILE
         Route::get('/profile', ['as' => 'admin.profile.index', 'uses' => 'ProfileController@index']);
@@ -47,7 +46,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'App\Modules\Admin\Controllers
         Route::post('/client/updateStatus', ['as'=>'admin.client.updateStatus', 'uses' => 'ClientController@updateStatus']);
         Route::resource('/client', 'ClientController');
 
-        
+
 
 
         // MULTI PHOTOs

@@ -28,11 +28,7 @@
             <tr>
               <th width="20%">ID</th>
               <th width="20%">Photos</th>
-<<<<<<< HEAD
-              <th width="20%">Order <button class="btn btn-primary btn-xs" id="btn-updateOrder">Update Order</button></th>
-=======
               <th width="20%">Order <button class="btn btn-primary btn-xs" id="btn-UpdateOrder">Update Order</button></th>
->>>>>>> 86f1fcd68ad3fce60e510094ecbe44e1452d79c7
               <th width="20%">Status</th>
               <th>&nbsp;</th>
             </tr>
