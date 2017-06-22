@@ -14,7 +14,7 @@ class HomeRepository extends BaseRepository implements RestfulInterface{
 
     public function first($column = ['*'])
     {
-        $inst = $this->model->firstOrFail();
+        $inst = $this->model->first();
         if($inst)
         {
             return $inst;
