@@ -31,6 +31,6 @@ class SendEmailEventListener
           $mes->from('customer_service@bsgroup.com.vn');
           $mes->to($event->to);
           $mes->subject($event->owner, $event->subject);
-        })
+      });
     }
 }

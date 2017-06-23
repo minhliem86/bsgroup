@@ -47,7 +47,7 @@
           <div class="form-group">
             <label class="col-md-2 control-label">Video ID</label>
             <div class="col-md-10">
-              <input type="text" required="" placeholder="Video ID" id="subject" class="form-control" name="video_id" value="{{ $inst->videos()->first()->video_id }}">
+              <input type="text" required="" placeholder="Video ID" id="subject" class="form-control" name="video_id" value="{{ !$inst->videos->isEmpty() ? $inst->videos()->first()->video_id : ""}}">
             </div>
           </div>
         </form>

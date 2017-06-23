@@ -47,11 +47,14 @@ class HomeController extends Controller
             $home->videos()->save($video);
         }else{
             $home = $this->homeRepo->update($data, $id);
-            if($video_id){
+            if($video_id && !$home->videos->isEmpty()){
                 $video = $home->videos->first();
                 $video->video_id = $video_id;
-                $home->videos()->save($video);
+            }else{
+                $video = new Video;
+                $video->video_id = $video_id;
             }
+            $home->videos()->save($video);
         }
 
         return redirect()->route('admin.home.index')->with('success', 'Infomation Updated !');

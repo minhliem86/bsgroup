@@ -60,7 +60,7 @@
                 </div>
               </div>
             </div>
-            <div class="panel-body">
+            <div class="{{Request::segment(2) === 'dashboard' ? 'panel-body-dashboard' : 'panel-body' }}">
               @yield('content')
             </div><!-- panel body -->
           </div>

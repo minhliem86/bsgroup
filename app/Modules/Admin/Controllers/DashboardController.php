@@ -9,14 +9,20 @@ use App\Http\Controllers\Controller;
 use developeruz\Analytics\Period;
 use developeruz\Analytics\Analytics;
 use Carbon\Carbon;
+use App\Repositories\ProjectRepository;
+use App\Repositories\ClientRepository;
 
 class DashboardController extends Controller
 {
     protected $analytic;
+    protected $project;
+    protected $client;
 
-    public function __construct(Analytics $analytic)
+    public function __construct(Analytics $analytic, ProjectRepository $project, ClientRepository $client)
     {
         $this->analytic = $analytic;
+        $this->project = $project;
+        $this->client = $client;
     }
     public function index(Request $request)
     {
@@ -37,9 +43,8 @@ class DashboardController extends Controller
         }else{
             $ga = $this->analytic->fetchTotalVisitorsAndPageViews(Period::days(7));
         }
-        // foreach($ga as $v){
-        //     dd(Carbon::createFromFormat('Y-m-d H:i:s', $v['date'])->toDateString() );
-        // }
-        return view('Admin::pages.index', compact('ga'));
+        $number_project =$this->project->count();
+        $number_client =$this->client->count();
+        return view('Admin::pages.index', compact('ga', 'number_project', 'number_client'));
     }
 }

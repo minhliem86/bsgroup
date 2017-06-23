@@ -2,6 +2,17 @@
 .sidebar-offcanvas{
   z-index: 105;
 }
+
+// DASHBOARD PAGE
+.wrap-icon{
+    i{
+        font-size:50px;
+        color:#37BC9B;
+    }
+    .badge{
+        font-size:20px;
+    }
+}
 .list-group-submenu{padding-left:15px}
 
 // PANEL BODY
@@ -13,6 +24,9 @@ h3.panel-title{
   height:700px;
   overflow-y: scroll;
   position: relative;
+}
+.panel-body-dashboard{
+    padding:15px;
 }
 
 // EDIT PAGE

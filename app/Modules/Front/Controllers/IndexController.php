@@ -36,7 +36,6 @@ class IndexController extends Controller {
 				return view('Front::pages.agency');
 				break;
 		}
-
   }
 
   public function getContact(Request $request, $param = null){

@@ -158,8 +158,14 @@ public function getOrder()
   } catch (ModelNotFoundException $e) {
     return 1;
   }
+}
 
-
+/**
+* COUNT
+**/
+public function count()
+{
+    return $this->model->count();
 }
 
 }

@@ -41,7 +41,7 @@
             <table bgcolor="#999999" style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; margin: 0; padding: 0; width: 100%;">
               <tbody>
                 <tr style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; margin: 0; padding: 0;">
-                  <td style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; margin: 0; padding: 0;"><a href="{!!route('front.getIndex')!!}" style="color: #2BA6CB; font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; margin: 0; padding: 0;"><img src="http://bsgroup.com.vn/public/assets/frontend/images/logo-email.png" style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; margin: 0; max-width: 100%; padding: 0;"></a></td>
+                  <td style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; margin: 0; padding: 0;"><a href="{{route('front.getIndex')}}" style="color: #2BA6CB; font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; margin: 0; padding: 0;"><img src="http://bsgroup.com.vn/public/assets/frontend/images/logo-email.png" style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; margin: 0; max-width: 100%; padding: 0;"></a></td>
                 </tr>
               </tbody>
             </table>
@@ -69,27 +69,27 @@
                   <td style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; margin: 0; padding: 0;">
                     <p class="lead" style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 17px; font-weight: normal; line-height: 1.6; margin: 0; margin-bottom: 10px; padding: 0;"></p>
                     <p style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; font-weight: normal; line-height: 1.6; margin: 0; margin-bottom: 10px; padding: 0;">BS GROUP vừa nhận được một thông tin liên hệ từ khách hàng:</p>
-                    <p style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; font-weight: normal; line-height: 1.6; margin: 0; margin-bottom: 10px; padding: 0;"><b style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; margin: 0; padding: 0;">Tên khách hàng:</b> {!!$name!!}</p>
-                    <p style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; font-weight: normal; line-height: 1.6; margin: 0; margin-bottom: 10px; padding: 0;"><b style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; margin: 0; padding: 0;">Email khách hàng:</b> {!!$email!!}</p>
-                    <p style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; font-weight: normal; line-height: 1.6; margin: 0; margin-bottom: 10px; padding: 0;"><b style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; margin: 0; padding: 0;">Số điện thoại khách hàng:</b> {!!$phone!!}</p>
+                    <p style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; font-weight: normal; line-height: 1.6; margin: 0; margin-bottom: 10px; padding: 0;"><b style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; margin: 0; padding: 0;">Tên khách hàng:</b> {{$name}}</p>
+                    <p style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; font-weight: normal; line-height: 1.6; margin: 0; margin-bottom: 10px; padding: 0;"><b style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; margin: 0; padding: 0;">Email khách hàng:</b> {{$email}}</p>
+                    <p style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; font-weight: normal; line-height: 1.6; margin: 0; margin-bottom: 10px; padding: 0;"><b style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; margin: 0; padding: 0;">Số điện thoại khách hàng:</b> {{$phone}}</p>
                     <p style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; font-weight: normal; line-height: 1.6; margin: 0; margin-bottom: 10px; padding: 0;"><b style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; margin: 0; padding: 0;">Dịch vụ:</b></p>
                     <ul class="list" style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; font-weight: normal; line-height: 1.6; margin: 0; margin-bottom: 10px; padding: 0;">
                       @foreach($service as $item_service)
-                      <li style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; list-style-position: inside; margin: 0; margin-left: 5px; padding: 0;">{!!$item_service!!}</li>
+                      <li style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; list-style-position: inside; margin: 0; margin-left: 5px; padding: 0;">{{$item_service}}</li>
                       @endforeach
                     </ul>
 
                     <p style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; font-weight: normal; line-height: 1.6; margin: 0; margin-bottom: 10px; padding: 0;"><b style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; margin: 0; padding: 0;">Thời gian:</b></p>
                     <ul class="list" style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; font-weight: normal; line-height: 1.6; margin: 0; margin-bottom: 10px; padding: 0;">
                       @foreach($timing as $item_time)
-                      <li style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; list-style-position: inside; margin: 0; margin-left: 5px; padding: 0;">{!!$item_time!!}</li>
+                      <li style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; list-style-position: inside; margin: 0; margin-left: 5px; padding: 0;">{{$item_time}}</li>
                       @endforeach
                     </ul>
 
                     <p style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; font-weight: normal; line-height: 1.6; margin: 0; margin-bottom: 10px; padding: 0;"><b style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; margin: 0; padding: 0;">Ngân sách:</b></p>
                     <ul class="list" style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; font-weight: normal; line-height: 1.6; margin: 0; margin-bottom: 10px; padding: 0;">
                       @foreach($budget as $item_budget)
-                      <li style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; list-style-position: inside; margin: 0; margin-left: 5px; padding: 0;">{!!$item_budget!!}</li>
+                      <li style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; list-style-position: inside; margin: 0; margin-left: 5px; padding: 0;">{{$item_budget}}</li>
                       @endforeach
                     </ul>
                     <!-- Callout Panel -->
@@ -125,8 +125,8 @@
                 <tr style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; margin: 0; padding: 0;">
                   <td align="center" style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; margin: 0; padding: 0;">
                     <p style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; font-weight: normal; line-height: 1.6; margin: 0; margin-bottom: 10px; padding: 0;">
-                      <a href="{!!route('front.getIndex')!!}" style="color: #2BA6CB; font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; margin: 0; padding: 0;">Bs Group</a> |
-                      <a href="{!!route('front.getContact')!!}" style="color: #2BA6CB; font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; margin: 0; padding: 0;">Contact</a>
+                      <a href="{{route('front.getIndex')}}" style="color: #2BA6CB; font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; margin: 0; padding: 0;">Bs Group</a> |
+                      <a href="{{route('front.getContact')}}" style="color: #2BA6CB; font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; margin: 0; padding: 0;">Contact</a>
                     </p>
                   </td>
                 </tr>

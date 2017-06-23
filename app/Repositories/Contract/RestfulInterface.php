@@ -25,4 +25,6 @@ interface RestfulInterface{
 
   public function getOrder();
 
+  public function count();
+
 }

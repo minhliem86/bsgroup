@@ -191,6 +191,7 @@
   </div>
 </section>	<!-- end section 03 -->
 
+@if(!$inst->isEmpty())
 <section class="section section04" id="client">
   <div class="title-container">
     <div class="wrap-title">
@@ -202,19 +203,17 @@
     <div class="container">
       <div class="swiper-container" id="swiper-partner">
         <div class="swiper-wrapper">
-          @for($i = 1; $i <= 71 ; $i++)
-						<div class="swiper-slide">
-	            <img src="{!!asset('public/assets/frontend')!!}/images/logo-partner/logo_{!!$i!!}.png" class="img-responsive logo-partner" alt="">
-	          </div>
-					@endfor
-
+			@foreach($inst as $item)
+			<div class="swiper-slide">
+				<img src="{{asset('public/upload')}}/{{$item->img_url}}" class="img-responsive logo-partner" alt="">
+			</div>
+		  	@endforeach
         </div>
       </div>
     </div>
-
   </div>
 </section>	<!-- end section 03 -->
-
+@endif
 
 <div class="background-area">
   <div class="center">

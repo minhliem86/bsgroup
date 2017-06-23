@@ -175,7 +175,7 @@ $(document).ready(function(){
 
   <div class="title-container" id="project">
     <div id="video-layer">
-      <div id="video-player" data-type="youtube" data-video-id="uRUK1GKeOc0"></div>
+      <div id="video-player" data-type="youtube" data-video-id="{{$inst->videos->first()->video_id}}"></div>
       <script>
          var tag = document.createElement('script');
 
@@ -199,7 +199,7 @@ $(document).ready(function(){
           event.target.mute();
         }
       </script>
-      <h2 class="title"><a href="{!!route('front.getProject')!!}">RECENT PROJECTS</a></h2>
+      <h2 class="title"><a href="{!!route('front.getProject')!!}">{{$inst->title}}</a></h2>
     </div>
     <!-- <div class="text-project">
       <div class="container">

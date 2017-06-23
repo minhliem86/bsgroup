@@ -12,4 +12,10 @@ class ProjectRepository extends BaseRepository implements RestfulInterface{
         return Project::class;
     }
   // END
+
+  // FRONT
+  public function getOrderByStatus($column = ['*'], $field = 'id', $order='ASC')
+  {
+      return $this->model->OrderBy($field, $order)->where('status', 1)->get($column);
+  }
 }

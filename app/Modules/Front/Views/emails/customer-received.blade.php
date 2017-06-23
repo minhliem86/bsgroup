@@ -43,7 +43,7 @@
               <tbody>
                 <tr style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; margin: 0; padding: 0;">
                   <td style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; margin: 0; padding: 0;">
-                    <a href="{!!route('front.getIndex')!!}" style="color: #2BA6CB; font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; margin: 0; padding: 0;"><img src="{!!asset('public/assets/frontend/images/logo-email.png')!!}" style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; margin: 0; max-width: 100%; padding: 0;"></a>
+                    <a href="{{route('front.getIndex')}}" style="color: #2BA6CB; font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; margin: 0; padding: 0;"><img src="{{asset('public/assets/frontend/images/logo-email.png')}}" style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; margin: 0; max-width: 100%; padding: 0;"></a>
                   </td>
                 </tr>
               </tbody>
@@ -72,7 +72,7 @@
                   <td style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; margin: 0; padding: 0;">
                     <p class="lead" style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 17px; font-weight: normal; line-height: 1.6; margin: 0; margin-bottom: 5px; padding: 0;"></p>
                     <span class="block" style="display: block; font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; margin: 0; margin-bottom: 15px; padding: 0;">
-							<p style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; font-weight: normal; line-height: 1.6; margin: 0; margin-bottom: 5px; padding: 0;">Dear {!!$name!!}</p>
+							<p style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; font-weight: normal; line-height: 1.6; margin: 0; margin-bottom: 5px; padding: 0;">Dear {{$name}}</p>
 							<p style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; font-weight: normal; line-height: 1.6; margin: 0; margin-bottom: 5px; padding: 0;">We have received your event information.</p>
 							<p style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; font-weight: normal; line-height: 1.6; margin: 0; margin-bottom: 5px; padding: 0;">Thank you for sharing your information with us.</p>
 						</span>
@@ -86,7 +86,7 @@
 						</span>
 
                     <span class="block text-center" style="display: block; font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; margin: 0; margin-bottom: 15px; padding: 0; text-align: center;">
-							<a href="{!!route('front.getIndex')!!}" style="color: #2BA6CB; font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; margin: 0; padding: 0;"><img src="{!!asset('public/assets/frontend/images/logo-tenyear-email.png')!!}" width="120" height="84" alt="BSGroup" style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; margin: 0; max-width: 100%; padding: 0;"></a>
+							<a href="{{route('front.getIndex')}}" style="color: #2BA6CB; font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; margin: 0; padding: 0;"><img src="{{asset('public/assets/frontend/images/logo-tenyear-email.png')}}" width="120" height="84" alt="BSGroup" style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; margin: 0; max-width: 100%; padding: 0;"></a>
 						</span>
 
                     <!-- Callout Panel -->

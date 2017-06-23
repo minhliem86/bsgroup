@@ -15,7 +15,12 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div id="bs-content-row-navbar-collapse-5" class="collapse navbar-collapse">
       <ul class="nav navbar-nav navbar-right">
-        <!-- <li class="disabled"><a href="#">Link</a></li> -->
+        {{-- <li class="dropdown">
+            <a data-toggle="dropdown" class="dropdown-toggle" href="#"><span class="badge badge-warning badge-md">7</span> Notifications</a>
+            <ul role="menu" class="dropdown-menu">
+                <li class="dropdown-header">You have 7 unread emails </li>
+            </ul>
+        </li> --}}
         <li class="dropdown">
           <a data-toggle="dropdown" class="dropdown-toggle" href="#"><i class="glyphicon glyphicon-user"></i> {{Auth::user()->name}} <b class="caret"></b></a>
           <ul role="menu" class="dropdown-menu">
