@@ -1,4 +1,4 @@
-@extends('Frontend::layouts.default')
+@extends('Front::layouts.default')
 
 @section('css')
   <link rel="stylesheet" href="{!!asset('public/assets/frontend')!!}/css/contact.css">

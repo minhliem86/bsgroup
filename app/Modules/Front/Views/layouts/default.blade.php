@@ -27,9 +27,9 @@
 
 </head>
 <body class="{!!Request::segment(1) !== '' ? 'page-level-2' : ''!!}">
-	@include('Frontend::layouts.header')
+	@include('Front::layouts.header')
 	 @yield('content')
-  @include('Frontend::layouts.footer')
+  @include('Front::layouts.footer')
 
   <script src="{!!asset('public/assets/frontend')!!}/js/jquery-1.11.2.min.js"></script>
   <script src="{!!asset('public/assets/frontend')!!}/js/jquery.waypoints.min.js"></script>

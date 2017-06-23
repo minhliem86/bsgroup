@@ -1,4 +1,4 @@
-@extends('Frontend::layouts.default')
+@extends('Front::layouts.default')
 
 @section('title','BS Group - Bespoke Event Agency - About Us')
 

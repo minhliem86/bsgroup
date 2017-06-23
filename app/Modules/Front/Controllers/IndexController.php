@@ -1,4 +1,4 @@
-<?php namespace App\Modules\Frontend\Controllers;
+<?php namespace App\Modules\Front\Controllers;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -13,10 +13,10 @@ class IndexController extends Controller {
 	public function getIndex(){
 		if(\Request::segment(1) == 'recent-project'){
 			Session::flash('recent','project');
-			return view('Frontend::pages.home');
+			return view('Front::pages.home');
 		}else{
 			Session::forget('recent');
-			return view('Frontend::pages.home');
+			return view('Front::pages.home');
 		}
 
   }
@@ -25,15 +25,15 @@ class IndexController extends Controller {
 		switch ($slug) {
 			case 'service':
 				Session::flash('area','service');
-				return view('Frontend::pages.agency');
+				return view('Front::pages.agency');
 				break;
 			case 'client':
 				Session::flash('area','client');
-				return view('Frontend::pages.agency');
+				return view('Front::pages.agency');
 				break;
 
 			default:
-				return view('Frontend::pages.agency');
+				return view('Front::pages.agency');
 				break;
 		}
 
@@ -43,11 +43,11 @@ class IndexController extends Controller {
 		switch ($param) {
 			case 'register':
 				Session::flash('key','beginForm');
-				return view('Frontend::pages.contact');
+				return view('Front::pages.contact');
 				break;
 
 			default:
-				return view('Frontend::pages.contact');
+				return view('Front::pages.contact');
 				break;
 		}
   }
@@ -61,13 +61,13 @@ class IndexController extends Controller {
 			'phone' => $request->input('phone'),
 		];
 		// Event::fire(new SendEmailEvent($data,'minhliemphp@gmail.com'));
-		\Mail::send('Frontend::emails.customer-received',$data,function($mes) use($data){
+		\Mail::send('Front::emails.customer-received',$data,function($mes) use($data){
 			$mes->from('customer_service@bsgroup.com.vn');
 			$mes->to($data['email']);
 			$mes->subject('BS GROUP', 'THANK YOU FOR SHARING YOUR INFORMATION!');
 		});
 
-		\Mail::send('Frontend::emails.customer-register',$data,function($mes){
+		\Mail::send('Front::emails.customer-register',$data,function($mes){
 			$mes->from('customer_service@bsgroup.com.vn');
 			$mes->to('marketing@bsgroup.com.vn')->cc([ 'nu.thao@bsgroup.com.vn', 'uyenthao2602@gmail.com', 'liemphan@bsgroup.com.vn']);
 			$mes->subject('BS GROUP', 'CUSTOMER SERVICE');
@@ -78,7 +78,7 @@ class IndexController extends Controller {
 
 	public function getProject()
 	{
-		return view('Frontend::pages.project');
+		return view('Front::pages.project');
 	}
 
 }

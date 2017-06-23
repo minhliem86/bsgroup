@@ -1,6 +1,6 @@
 <?php
 
-Route::group(['namespace'=>'App\Modules\Frontend\Controllers'],function(){
+Route::group(['namespace'=>'App\Modules\Front\Controllers'],function(){
   Route::get('/',['as'=>'front.getIndex','uses'=>'IndexController@getIndex']);
   Route::get('/recent-project',['as'=>'front.getRecent','uses'=>'IndexController@getIndex']);
   Route::get('/agency/{slug?}',['as'=>'front.getAgency','uses'=>'IndexController@getAgency']);
@@ -9,7 +9,7 @@ Route::group(['namespace'=>'App\Modules\Frontend\Controllers'],function(){
   Route::post('/contact',['as'=>'front.postContact','uses'=>'IndexController@postContact']);
 
   // Route::get('/email',function(){
-  //   return view('Frontend::emails.customer-received');
+  //   return view('Front::emails.customer-received');
   // });
 
 
