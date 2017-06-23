@@ -94,7 +94,7 @@ class AuthController extends Controller
             );
         }
         $user = $this->create($request->all());
-        $role = Role::findOrFail(1);
+        $role = Role::firstOrFail();
         $user->attachRole($role);
 
         $this->auth->login($user);
