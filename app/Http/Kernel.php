@@ -31,6 +31,7 @@ class Kernel extends HttpKernel
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
             \App\Http\Middleware\VerifyCsrfToken::class,
             \Krucas\Notification\Middleware\NotificationMiddleware::class,
+
         ],
 
         'api' => [
@@ -53,5 +54,6 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'can_login' => \App\Modules\Admin\Middlewares\CheckCanLoginMiddleware::class,
         'guest.admin' => \App\Modules\Admin\Middlewares\AdminRedirectIfAuthMiddleware::class,
+        'language' => \App\Http\Middleware\Language::class,
     ];
 }

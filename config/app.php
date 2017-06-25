@@ -165,6 +165,7 @@ return [
         Zizaco\Entrust\EntrustServiceProvider::class,
         \Krucas\Notification\NotificationServiceProvider::class,
         developeruz\Analytics\AnalyticsServiceProvider::class,
+        Dimsav\Translatable\TranslatableServiceProvider::class,
     ],
 
     /*

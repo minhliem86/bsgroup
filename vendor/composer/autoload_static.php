@@ -99,6 +99,7 @@ class ComposerStaticInitfe30c194e7cb0e019de69d9bf8c6aea0
         array (
             'Dotenv\\' => 7,
             'Doctrine\\Instantiator\\' => 22,
+            'Dimsav\\Translatable\\' => 20,
         ),
         'C' => 
         array (
@@ -261,6 +262,10 @@ class ComposerStaticInitfe30c194e7cb0e019de69d9bf8c6aea0
         array (
             0 => __DIR__ . '/..' . '/doctrine/instantiator/src/Doctrine/Instantiator',
         ),
+        'Dimsav\\Translatable\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/dimsav/laravel-translatable/src/Translatable',
+        ),
         'Cron\\' => 
         array (
             0 => __DIR__ . '/..' . '/mtdowling/cron-expression/src/Cron',
@@ -330,14 +335,35 @@ class ComposerStaticInitfe30c194e7cb0e019de69d9bf8c6aea0
     );
 
     public static $classMap = array (
+        'AddFreshSeeds' => __DIR__ . '/..' . '/dimsav/laravel-translatable/tests/seeds/AddFreshSeeds.php',
         'CreateClientsTable' => __DIR__ . '/../..' . '/database/migrations/2017_06_19_023513_create_clients_table.php',
         'CreateContactsTable' => __DIR__ . '/../..' . '/database/migrations/2017_06_23_081147_create_contacts_table.php',
         'CreateHomesTable' => __DIR__ . '/../..' . '/database/migrations/2017_06_19_072812_create_homes_table.php',
         'CreatePasswordResetsTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
+        'CreateProjectTranslationsTable' => __DIR__ . '/../..' . '/database/migrations/2017_06_25_025305_create_project_translations_table.php',
         'CreateProjectsTable' => __DIR__ . '/../..' . '/database/migrations/2017_05_27_030028_create_projects_table.php',
+        'CreateTables' => __DIR__ . '/..' . '/dimsav/laravel-translatable/tests/migrations/2013_11_28_152610_create_tables.php',
         'CreateUsersTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_000000_create_users_table.php',
         'CreateVideosTable' => __DIR__ . '/../..' . '/database/migrations/2017_06_19_073008_create_videos_table.php',
         'DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeds/DatabaseSeeder.php',
+        'Dimsav\\Translatable\\Test\\Model\\City' => __DIR__ . '/..' . '/dimsav/laravel-translatable/tests/models/City.php',
+        'Dimsav\\Translatable\\Test\\Model\\CityTranslation' => __DIR__ . '/..' . '/dimsav/laravel-translatable/tests/models/CityTranslation.php',
+        'Dimsav\\Translatable\\Test\\Model\\Company' => __DIR__ . '/..' . '/dimsav/laravel-translatable/tests/models/Company.php',
+        'Dimsav\\Translatable\\Test\\Model\\Continent' => __DIR__ . '/..' . '/dimsav/laravel-translatable/tests/models/Continent.php',
+        'Dimsav\\Translatable\\Test\\Model\\ContinentTranslation' => __DIR__ . '/..' . '/dimsav/laravel-translatable/tests/models/ContinentTranslation.php',
+        'Dimsav\\Translatable\\Test\\Model\\Country' => __DIR__ . '/..' . '/dimsav/laravel-translatable/tests/models/Country.php',
+        'Dimsav\\Translatable\\Test\\Model\\CountryGuarded' => __DIR__ . '/..' . '/dimsav/laravel-translatable/tests/models/CountryGuarded.php',
+        'Dimsav\\Translatable\\Test\\Model\\CountryStrict' => __DIR__ . '/..' . '/dimsav/laravel-translatable/tests/models/CountryStrict.php',
+        'Dimsav\\Translatable\\Test\\Model\\CountryTranslation' => __DIR__ . '/..' . '/dimsav/laravel-translatable/tests/models/CountryTranslation.php',
+        'Dimsav\\Translatable\\Test\\Model\\CountryTranslationGuarded' => __DIR__ . '/..' . '/dimsav/laravel-translatable/tests/models/CountryTranslationGuarded.php',
+        'Dimsav\\Translatable\\Test\\Model\\CountryWithCustomLocaleKey' => __DIR__ . '/..' . '/dimsav/laravel-translatable/tests/models/CountryWithCustomLocaleKey.php',
+        'Dimsav\\Translatable\\Test\\Model\\Food' => __DIR__ . '/..' . '/dimsav/laravel-translatable/tests/models/Food.php',
+        'Dimsav\\Translatable\\Test\\Model\\FoodTranslation' => __DIR__ . '/..' . '/dimsav/laravel-translatable/tests/models/FoodTranslation.php',
+        'Dimsav\\Translatable\\Test\\Model\\Person' => __DIR__ . '/..' . '/dimsav/laravel-translatable/tests/models/Person.php',
+        'Dimsav\\Translatable\\Test\\Model\\PersonTranslation' => __DIR__ . '/..' . '/dimsav/laravel-translatable/tests/models/PersonTranslation.php',
+        'Dimsav\\Translatable\\Test\\Model\\StrictTranslation' => __DIR__ . '/..' . '/dimsav/laravel-translatable/tests/models/StrictTranslation.php',
+        'Dimsav\\Translatable\\Test\\Model\\Vegetable' => __DIR__ . '/..' . '/dimsav/laravel-translatable/tests/models/Vegetable.php',
+        'Dimsav\\Translatable\\Test\\Model\\VegetableTranslation' => __DIR__ . '/..' . '/dimsav/laravel-translatable/tests/models/VegetableTranslation.php',
         'EntrustSetupTables' => __DIR__ . '/../..' . '/database/migrations/2017_05_17_092201_entrust_setup_tables.php',
         'File_Iterator' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Iterator.php',
         'File_Iterator_Facade' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Facade.php',
@@ -819,6 +845,7 @@ class ComposerStaticInitfe30c194e7cb0e019de69d9bf8c6aea0
         'PHP_Token_YIELD_FROM' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PhotoSeeder' => __DIR__ . '/../..' . '/database/seeds/PhotoSeeder.php',
         'ProjectSeeder' => __DIR__ . '/../..' . '/database/seeds/ProjectSeeder.php',
+        'ScopesTest' => __DIR__ . '/..' . '/dimsav/laravel-translatable/tests/ScopesTest.php',
         'SebastianBergmann\\Comparator\\ArrayComparator' => __DIR__ . '/..' . '/sebastian/comparator/src/ArrayComparator.php',
         'SebastianBergmann\\Comparator\\Comparator' => __DIR__ . '/..' . '/sebastian/comparator/src/Comparator.php',
         'SebastianBergmann\\Comparator\\ComparisonFailure' => __DIR__ . '/..' . '/sebastian/comparator/src/ComparisonFailure.php',
@@ -856,7 +883,11 @@ class ComposerStaticInitfe30c194e7cb0e019de69d9bf8c6aea0
         'SebastianBergmann\\RecursionContext\\InvalidArgumentException' => __DIR__ . '/..' . '/sebastian/recursion-context/src/InvalidArgumentException.php',
         'SebastianBergmann\\Version' => __DIR__ . '/..' . '/sebastian/version/src/Version.php',
         'TestCase' => __DIR__ . '/../..' . '/tests/TestCase.php',
+        'TestCoreModelExtension' => __DIR__ . '/..' . '/dimsav/laravel-translatable/tests/TestCoreModelExtension.php',
+        'TestsBase' => __DIR__ . '/..' . '/dimsav/laravel-translatable/tests/TestsBase.php',
         'Text_Template' => __DIR__ . '/..' . '/phpunit/php-text-template/src/Template.php',
+        'TranslatableTest' => __DIR__ . '/..' . '/dimsav/laravel-translatable/tests/TranslatableTest.php',
+        'UpdateProjectsTable' => __DIR__ . '/../..' . '/database/migrations/2017_06_25_024835_update_projects_table.php',
         'Zizaco\\Entrust\\MigrationCommand' => __DIR__ . '/..' . '/zizaco/entrust/src/commands/MigrationCommand.php',
     );
 

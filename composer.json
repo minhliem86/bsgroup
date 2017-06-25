@@ -12,7 +12,8 @@
         "edvinaskrucas/notification": "5.1.*",
         "unisharp/laravel-filemanager": "^1.7",
         "shiftonelabs/laravel-cascade-deletes": "^1.0",
-        "developeruz/laravel-analytics": "^2.3"
+        "developeruz/laravel-analytics": "^2.3",
+        "dimsav/laravel-translatable": "6.*"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
