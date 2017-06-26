@@ -1,5 +1,6 @@
 <?php
-return [
-  'about' => 'about',
-  'contact' => 'contact',
-];
+    return [
+            'contact' => 'contact',
+            'test' => 'test-en',
+            'about' => 'about'
+    ];

@@ -1,5 +1,6 @@
 <?php
-return [
-  'about' => 've-chung-toi',
-  'contact'=>'lien-he'
-];
+    return [
+            'contact' => 'lien-he',
+            'test' => 'kiem-tra',
+            'about' => 've-chung-toi'
+    ];
