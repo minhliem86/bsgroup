@@ -22,7 +22,6 @@ class Language
 
         if(!Session::has('applocale') ) {
             // Check if the first segment matches a language code
-
             if (!in_array($request->segment(1), config('translatable.locales')) ) {
               // Store segments in array
               $segments = $request->segments();
@@ -35,10 +34,11 @@ class Language
               return redirect()->to(implode('/', $segments));
         }else{
             app()->setLocale($request->segment(1));
-
             Session::put('applocale', $request->segment(1) );
         }
     }else{
+        // dd(Session::get('applocale'));
+        // dd(app()->getLocale());
         if(in_array($request->segment(1), config('translatable.locales') ) ){
             app()->setLocale($request->segment(1));
             Session::put('applocale', $request->segment(1) );

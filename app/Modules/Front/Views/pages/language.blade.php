@@ -12,6 +12,8 @@
 </head>
 <body>
     <p>{{trans('test.about')}}</p>
+    <p>{{trans('routes.test')}}</p>
+    <a href="{{url(trans('routes.test') )}}">Link about</a>
     <ul>
         <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">

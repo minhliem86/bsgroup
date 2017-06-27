@@ -39,8 +39,6 @@ class RouteServiceProvider extends ServiceProvider
     public function map(Router $router)
     {
         $this->mapWebRoutes($router);
-
-        //
     }
 
     /**
@@ -63,8 +61,10 @@ class RouteServiceProvider extends ServiceProvider
         $locale = Request::segment(1);
         // FRONTEND ROUTE
         $router->group([
-            'prefix'=> $locale,
-        ], function ($router) {
+            'middleware' => ['web', 'language'], 'prefix'=> $locale,
+        ], function ($router) use ($locale) {
+            app()->setLocale($locale);
+            // dd(\Session::get('applocale'));
             require app_path('/Modules/Front/routes.php');
         });
 
