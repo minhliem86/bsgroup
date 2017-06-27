@@ -11,8 +11,9 @@
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
+// Route::get('/test', function () {
+//     // return view('welcome');
+//     dd(app('request')->route());
 // });
-//
+
 // Route::get('/home', 'HomeController@index');

@@ -14,8 +14,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(Request $request)
     {
-      // dd(Session::get('applocale'));
-      // app()->setLocale(\Session::get('applocale'));
+    //   app()->setLocale($request->segment(1));
     }
 
     /**

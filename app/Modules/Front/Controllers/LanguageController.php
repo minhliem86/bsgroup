@@ -15,15 +15,16 @@ class LanguageController extends Controller
     {
         // Store the URL on which the user was
         $previous_url = url()->previous();
+
         $request = str_replace(url('/'),'',$previous_url);
-        // dd($request);
+
         // Transform it into a correct request instance
         $previous_request = app('request')->create($request);
 
         // Get route name
         $route_name = app('router')->getRoutes()->match($previous_request)->getName();
 
-        // dd($route_name, Session::get('applocale'));
+
         // Get Query Parameters if applicable
         $query = $previous_request->query();
 
@@ -32,13 +33,25 @@ class LanguageController extends Controller
       //  array_shift($segments);
 
        if(in_array($lang, config('translatable.locales') )){
+           app()->setLocale($lang);
+
+           if ($route_name && Lang::has('routes.' . $route_name, $lang)) {
+
+                // Translate the route name to get the correct URI in the required language, and redirect to that URL.
+                if (count($query)) {
+                    return redirect()->to($lang . '/' .  trans('routes.' . $route_name, [], $lang) . '?' . http_build_query($query));
+                }
+                // dd($lang . '/' .  trans('routes.' . $route_name, [], $lang));
+                return redirect()->to($lang . '/' .  trans('routes.' . $route_name, [], $lang));
+            }
+
            $segments[0] = $lang;
-          //  app()->setLocale($lang);
-          //  Session::put('applocale',$lang);
+
            if (count($query)) {
                 // return redirect()->route($route_name);
                 return redirect()->to(implode('/', $segments) . '?' . http_build_query($query));
             }
+            // dd(trans('routes.about'));
             // return redirect()->route($route_name);
             return redirect()->to(implode('/', $segments));
        }
