@@ -55,9 +55,9 @@ class Kernel extends HttpKernel
         'can_login' => \App\Modules\Admin\Middlewares\CheckCanLoginMiddleware::class,
         'guest.admin' => \App\Modules\Admin\Middlewares\AdminRedirectIfAuthMiddleware::class,
         /**** OTHER MIDDLEWARE ****/
-    		'localize' => \Mcamara\LaravelLocalization\Middleware\LaravelLocalizationRoutes::class,
-    		'localizationRedirect' => \Mcamara\LaravelLocalization\Middleware\LaravelLocalizationRedirectFilter::class,
-    		'localeSessionRedirect' => \Mcamara\LaravelLocalization\Middleware\LocaleSessionRedirect::class,
+		'localize' => \Mcamara\LaravelLocalization\Middleware\LaravelLocalizationRoutes::class,
+		'localizationRedirect' => \Mcamara\LaravelLocalization\Middleware\LaravelLocalizationRedirectFilter::class,
+		'localeSessionRedirect' => \Mcamara\LaravelLocalization\Middleware\LocaleSessionRedirect::class,
         'localeViewPath' => \Mcamara\LaravelLocalization\Middleware\LaravelLocalizationViewPath::class
     ];
 }

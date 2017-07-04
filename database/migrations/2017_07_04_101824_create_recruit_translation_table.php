@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateProjectTranslationsTable extends Migration
+class CreateRecruitTranslationTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,12 +12,14 @@ class CreateProjectTranslationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('project_translations', function (Blueprint $table) {
+        Schema::create('recruits_translation', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('project_id')->unsigned();
             $table->string('title')->nullable();
             $table->text('description')->nullable();
+            $table->text('content')->nullable();
             $table->string('locale')->index();
+            $table->integer('recruit_id')->unsigned();
+            $table->foreign('recruit_id')->references('id')->on('recruits')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -29,6 +31,6 @@ class CreateProjectTranslationsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('project_translations');
+        Schema::drop('recruits_translation');
     }
 }
