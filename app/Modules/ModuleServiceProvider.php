@@ -1,12 +1,23 @@
 <?php   namespace App\Modules;
 
 use Illuminate\Support\ServiceProvider;
- 
+use Illuminate\Routing\Router;
+use Request;
+
 class ModuleServiceProvider extends ServiceProvider{
 
-    public function register(){}
+    protected $front_namespace = 'App\Modules\Front\Controllers';
 
-    public function boot(){
+    public function register(){
+        $modules = config('module.modules');
+        foreach($modules as $module){
+            if($module === 'Front'){
+                $this->app->register('App\Providers\SetLanguageProvider');
+            }
+        }
+    }
+
+    public function boot(Router $router){
         //Load cai array modules trong file module.php trong thu muc config
         $modules = config('module.modules');
 
@@ -22,6 +33,18 @@ class ModuleServiceProvider extends ServiceProvider{
                 $this->loadViewsFrom(__DIR__.'/'.$module.'/Views', $module);
             }
         }
+        $this->mapFrontRoutes($router);
+        // dd(session('applocale'));
+    }
+
+    protected function mapFrontRoutes(Router $router)
+    {
+        $locale = Request::segment(1);
+        $router->group([
+            'namespace' => $this->front_namespace, 'middleware' => ['web','language'], 'prefix' =>$locale
+        ], function ($router) {
+            require app_path('Modules/Front/routes.php');
+        });
     }
 }
 ?>
