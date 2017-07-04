@@ -13,7 +13,8 @@
         "unisharp/laravel-filemanager": "^1.7",
         "shiftonelabs/laravel-cascade-deletes": "^1.0",
         "developeruz/laravel-analytics": "^2.3",
-        "dimsav/laravel-translatable": "6.*"
+        "dimsav/laravel-translatable": "6.*",
+        "mcamara/laravel-localization": "1.2.*"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

@@ -166,6 +166,7 @@ return [
         \Krucas\Notification\NotificationServiceProvider::class,
         developeruz\Analytics\AnalyticsServiceProvider::class,
         Dimsav\Translatable\TranslatableServiceProvider::class,
+        Mcamara\LaravelLocalization\LaravelLocalizationServiceProvider::class,
     ],
 
     /*
@@ -216,6 +217,7 @@ return [
         'Html' => Collective\Html\HtmlFacade::class,
         'Entrust'   => Zizaco\Entrust\EntrustFacade::class,
         'Analytics' => developeruz\Analytics\AnalyticsFacade::class,
+        'LaravelLocalization' => Mcamara\LaravelLocalization\Facades\LaravelLocalization::class,
     ],
 
 ];
