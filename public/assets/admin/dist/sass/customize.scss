@@ -29,6 +29,17 @@ h3.panel-title{
     padding:15px;
 }
 
+// TAB
+.tab-content.custom{
+  padding:10px 0 0;
+}
+.custom-nav{
+  li.active > a, li.active > a:focus, li.active > a:hover{
+    background:#87B6DE !important;
+    opacity: 0.7;
+  }
+}
+
 // EDIT PAGE
 .trick-img{
   cursor:pointer;

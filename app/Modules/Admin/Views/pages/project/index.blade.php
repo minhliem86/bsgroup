@@ -29,6 +29,8 @@
               <th>ID</th>
               <th><i class="glyphicon glyphicon-search"></i> Title</th>
               <th>Video ID</th>
+              <th width="20%">Order <button class="btn btn-primary btn-xs" id="btn-UpdateOrder">Update Order</button></th>
+              <th>Status</th>
               <th>&nbsp;</th>
             </tr>
           </thead>
@@ -37,7 +39,14 @@
             <tr>
               <td>{{$item->id}}</td>
               <td>{{$item->title}}</td>
-              <td>{{$item->video_id}}</td>
+              <td>{{$item->videos->last()->video_id}}</td>
+              <td><input type="text" name="dataOrder" data-id="{{$item->id}}" value="{{$item->order}}" class="form-control" /></td>
+              <td>
+                <label class="toggle">
+                  <input type="checkbox" name="status" value="1" data-id="{{$item->id}}" {{$item->status == 1 ? 'checked' : '' }}  >
+                  <span class="handle"></span>
+                </label>
+              </td>
               <td align="right">
                 <a href="{{route('admin.project.edit', $item->id)}}" class="btn btn-info btn-xs"><i class="glyphicon glyphicon-pencil"></i> EDIT</a>
                 <span class="inline-block-span">
@@ -108,6 +117,48 @@
               });
             }
           })
+        })
+
+        // UPDATE ORDER
+
+        $(document).on('click', '#btn-UpdateOrder', function(){
+            const data_order = {};
+            $('input[name="dataOrder"]').each(function(i){
+                const id = $(this).data('id');
+                const value = $(this).val();
+                data_order[id] = value;
+            });
+            $.ajax({
+                url: "{{route('admin.project.updateOrder')}}",
+                type: "POST",
+                data: {data: data_order, _token:$('meta[name="csrf-token"]').attr('content') },
+                success: function(rs){
+                    if(!rs.error){
+                        location.reload();
+                    }
+                }
+            })
+        });
+
+        // UPDATE STATUS
+        $(document).on('change', 'input[name="status"]', function(){
+            let value = 0;
+            if($(this).is(':checked')){
+                value = 1;
+            }
+            // console.log(value);
+            const id = $(this).data('id');
+            $.ajax({
+                url: "{{route('admin.project.updateStatus')}}",
+                type: "POST",
+                data: {value: value, id: id, _token:$('meta[name="csrf-token"]').attr('content')},
+                success: function(rs){
+                    if(!rs.error){
+                        alertify.success('Status Changed.')
+                    }
+                }
+            })
+
         })
 
       })

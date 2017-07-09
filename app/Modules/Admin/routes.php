@@ -33,7 +33,9 @@ Route::group(['prefix' => 'admin', 'namespace' => 'App\Modules\Admin\Controllers
         Route::get('/profile', ['as' => 'admin.profile.index', 'uses' => 'ProfileController@index']);
 
         //   PROJECT
-        Route::post('/project/deleteAll', ['as' => 'admin.project.deleteAll', 'uses' => 'ProjectController@deleteAll'  ]);
+        Route::post('/project/deleteAll', ['as' => 'admin.project.deleteAll', 'uses' => 'ProjectController@deleteAll']);
+        Route::post('/project/updateOrder', ['as'=>'admin.project.updateOrder', 'uses' => 'ProjectController@updateOrder']);
+        Route::post('/project/updateStatus', ['as'=>'admin.project.updateStatus', 'uses' => 'ProjectController@updateStatus']);
         Route::resource('/project', 'ProjectController');
 
         // HOME PAGE

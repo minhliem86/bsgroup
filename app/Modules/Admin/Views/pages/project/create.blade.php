@@ -12,21 +12,48 @@
         <form method="POST" action="{{route('admin.project.store')}}" id="form" role="form" class="form-horizontal">
           {{Form::token()}}
           <div class="form-group">
-            <label class="col-md-2 control-label">Title</label>
-            <div class="col-md-10">
-              <input type="text" required="" placeholder="Title" id="title" class="form-control" name="title">
-            </div>
-          </div>
-          <div class="form-group">
             <label class="col-md-2 control-label">Video ID</label>
             <div class="col-md-10">
               <input type="text" required="" placeholder="Video ID" id="subject" class="form-control" name="video_id">
             </div>
           </div>
           <div class="form-group">
+            <label class="col-md-2 control-label">Title</label>
+            <div class="col-md-10">
+              <div class="wrap-panel">
+                <ul class="nav nav-tabs nav-justified custom-nav">
+                  <li class="active"><a href="#title_en" data-toggle="tab"><b>EN</b></a></li>
+                  <li><a href="#title_vi" data-toggle="tab"><b>VN</b></a></li>
+                </ul>
+                <div id="myTabContent" class="tab-content custom">
+                  <div class="tab-pane fade active in" id="title_en">
+                    <input type="text" required="" placeholder="Title EN" id="title" class="form-control" name="title_en">
+                  </div>
+                  <div class="tab-pane fade" id="title_vi">
+                    <input type="text" required="" placeholder="Title VI" id="title" class="form-control" name="title_vi">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
             <label class="col-md-2 control-label" for="description">Description</label>
             <div class="col-md-10">
-              <textarea required="" class="form-control my-editor" placeholder="Description" rows="15" id="description" name="description"></textarea>
+              <div class="wrap-panel">
+                <ul class="nav nav-tabs nav-justified custom-nav">
+                  <li class="active"><a href="#description_en" data-toggle="tab"><b>EN</b></a></li>
+                  <li><a href="#description_vi" data-toggle="tab"><b>VN</b></a></li>
+                </ul>
+                <div id="myTabContent" class="tab-content custom">
+                  <div class="tab-pane fade active in" id="description_en">
+                    <textarea required="" class="form-control my-editor" placeholder="Description EN" rows="15" name="description_en"></textarea>
+                  </div>
+                  <div class="tab-pane fade" id="description_vi">
+                    <textarea required="" class="form-control my-editor" placeholder="Description VI" rows="15" name="description_vi"></textarea>
+                  </div>
+                </div>
+              </div>
+
             </div>
           </div>
           {{-- <div class="form-group">

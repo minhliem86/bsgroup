@@ -2,6 +2,7 @@ function init_tinymce(url){
     var editor_config = {
         path_absolute : url,
         selector: "textarea.my-editor",
+        height:300,
         plugins: [
         "advlist autolink lists link image charmap print preview hr anchor pagebreak",
         "searchreplace wordcount visualblocks visualchars code fullscreen",

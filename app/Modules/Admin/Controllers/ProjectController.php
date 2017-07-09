@@ -52,12 +52,20 @@ class ProjectController extends Controller
     public function store(Request $request, CommonRepository $common)
     {
         $order = $this->projectRepo->getOrder();
-        $img_url = $common->getPath($request->input('img_url'), $this->_removePath1);
+        $img_url = $common->getPath($request->input('img_url'));
+
         $data = [
-          'title' => $request->input('title'),
-          'description' => $request->input('description'),
+          'en' => [
+            'title' => $request->input('title_en'),
+            'description' => $request->input('description_en'),
+          ],
+          'vi' => [
+            'title' => $request->input('title_vi'),
+            'description' => $request->input('description_vi'),
+          ],
           'order' => $order,
         ];
+
         $project = $this->projectRepo->create($data);
 
         $order_video = $this->videoRepo->getOrder();
@@ -148,5 +156,43 @@ class ProjectController extends Controller
         $this->projectRepo->deleteAll($data);
         return redirect()->route('admin.project.index')->with('success','Item Deleted.');
       }
+    }
+
+    // UPDATE ORDER
+    public function updateOrder(Request $request)
+    {
+        if(!$request->ajax()){
+            abort(404, 'Not Access');
+        }else{
+            $data = $request->input('data');
+            foreach($data as $k => $v){
+                $att = [
+                    'order' => $v,
+                ];
+                $this->projectRepo->update($att, $k);
+            }
+            return response()->json([
+                'mes' => 'Updated',
+                'error'=> false,
+            ], 200);
+        }
+    }
+
+    // UPDATE STATUS
+    public function updateStatus(Request $request)
+    {
+        if(!$request->ajax()){
+            abort(404, 'Not Access');
+        }else{
+            $value = $request->input('value');
+            $id = $request->input('id');
+            $client = $this->projectRepo->find($id);
+            $client->status = $value;
+            $client->save();
+            return response()->json([
+                'mes' => 'Updated',
+                'error'=> false,
+            ], 200);
+        }
     }
 }
